@@ -32,7 +32,11 @@ export default class TypeTest extends React.Component
       <span className = "spd-cal lab lab-time">Time</span>
       <span className = "spd-cal lab">words/min</span>
       <span className = "spd-cal lab">char/min</span>
-      <ContentEditable class = "text-area text-area-type" dir = "rtl" placeholder = "this is some random text"/>
+      <div class ="text-area text-area-type">
+      <div class = "type type-before">{}</div>
+      <ContentEditable class = "input" placeholder = "this is some random text"/>
+      <div class = "type type-after">{RandomWords(100).join(' ')}</div>
+      </div>
     </>
   )   
   } 
