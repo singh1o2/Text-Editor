@@ -333,7 +333,10 @@ font-family: 'Raleway', sans-serif;
 .type-before
 {
   text-align:right;
-  white-space: pre-wrap;
+  white-space: nowrap;
+  text-overflow: " [..]";
+  direction: rtl;
+
 }
 .type-after
 {
