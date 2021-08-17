@@ -325,11 +325,26 @@ font-family: 'Raleway', sans-serif;
 }
 .type
 {
-  width:49%;
+  width:49.5%;
   display:inline-block;
+  overflow:hidden;
+  height:50px;
+}
+.type-before
+{
+  text-align:right;
+  white-space: pre-wrap;
+}
+.type-after
+{
+  color:grey;
+  white-space: pre-wrap;
 }
 .input
 {
-  width:1%;
+  width:0.3%;
   display:inline-block;
+  overflow:hidden;
+  height:50px;
+  outline:none;
 }
