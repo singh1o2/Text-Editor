@@ -4,10 +4,16 @@
 }
 #wave {
   position: relative;
-  height: 595px;
+  height: 495px;
   width: 100%;
   background: #666ff0;
 }
+svg
+{
+  position: absolute;
+  top:475px;
+}
+/*
 #wave:before {
   content: '';
   display: block;
@@ -30,7 +36,7 @@
   left: -20px;
   top: 515.45px;
 }
-
+*/
 .jumbotron {
   position: relative;
   text-align: center;
@@ -264,6 +270,7 @@ font-family: 'Raleway', sans-serif;
   background:  white;
   color:grey;
   font-weight:550;
+  
   height:60px;
   border-radius:30px;
   box-shadow: 0 2px 5.5px rgb(0 0 0 / 0.3);

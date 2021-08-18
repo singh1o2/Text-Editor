@@ -18,25 +18,23 @@ export default class TypeTest extends React.Component
     if(this.state.time>0)
     {
       this.setState({time:this.state.time-1});
+      this.setState({speed:Math.round(this.state.substring.trim().split(' ').length/(60-this.state.time)*60)})
+      this.setState({charSpeed:Math.round(this.state.substring.length/(60-this.state.time)*60)})
     }
     else{
       clearInterval(ID);
-      alert("The speed was "+this.state.speed);
-      this.setState ({randomWords:' '+RandomWords(100).join(' '),inpVal:'',time:59,speed:0,charSpeed:0,substring:''});
+      //this.setState ({randomWords:' '+RandomWords(100).join(' '),inpVal:'',time:59,speed:0,charSpeed:0,substring:''});
     }
   }
   
 
   handleChange(event)
   {
-    this.setState({inpVal:this.state.inpVal+event.target.value.replace('&nbsp;',' ')}
-    );
+    this.setState({inpVal:this.state.inpVal+event.target.value.replace('&nbsp;',' ')});
     if(this.state.randomWords.slice(0,1) == event.target.value.replace('&nbsp;',' ') && this.state.substring.trim()==this.state.inpVal.trim())
     {
       this.setState({substring:this.state.substring+this.state.randomWords.slice(0,1),randomWords:this.state.randomWords.slice(1)});
-    }
-    console.log(this.state.substring);
-    this.setState({speed:Math.round(this.state.inpVal.trim().split(' ').length/(60-this.state.time)*60)})
+    } 
   }
  
   handleKeyDown(event)
@@ -44,8 +42,7 @@ export default class TypeTest extends React.Component
     if(this.state.isKeyDown)
     {
       this.setState({isKeyDown:false});
-      var ID = setInterval(this.decreaseTime,1000,ID)
-      
+      var ID = setInterval(()=>this.decreaseTime(ID),1000)
     }
     
     if(event.keyCode == 8 && this.state.substring!=this.state.inpVal)
@@ -67,6 +64,7 @@ export default class TypeTest extends React.Component
           <div class = "type type-before">{this.state.inpVal}</div>
           <ContentEditable class = "input" placeholder = "this is some random text" html = {''} onChange = {this.handleChange} onKeyDown = {this.handleKeyDown}/>
           <div class = "type type-after">{this.state.randomWords}</div>
+          
         </div>
       </>
     )   

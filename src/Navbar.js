@@ -4,7 +4,7 @@ import Nav from "./Nav.js";
 export default function Navbar(props)
 {
   return(
-    <div id  = "wave">
+    <div id="wave">
       <Nav />
       <Head/>
     </div>

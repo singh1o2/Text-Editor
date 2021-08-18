@@ -20,10 +20,11 @@ export default function Tools(props)
 function Button(props){
   var  cls = ["btn btn-tools",props.cls]
   cls = cls. join (" ");
+  handleClick()
+  {
+    
+  }
   return(
-   
-  <button className = {cls}>{props.value}<i class="fas fa-external-link-alt"></i></button>
-  
-
+  <button className = {cls} onClick = {this.handleClick}>{props.value}<i class="fas fa-external-link-alt"></i></button>
   )
 }
